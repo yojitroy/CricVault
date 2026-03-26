@@ -180,7 +180,7 @@ function renderPointsTable() {
             <td>${t.won}</td>
             <td>${t.lost}</td>
             <td style="color: #3b82f6; font-weight: bold;">${t.points}</td>
-            <td>${t.nrr.toFixed(3)}</td>
+            <td style="color: ${t.nrr > 0 ? '#10b981' : t.nrr < 0 ? '#ef4444' : '#94a3b8'}; font-weight:600;">${t.nrr > 0 ? '+' : ''}${t.nrr.toFixed(3)}</td>
         </tr>
     `).join('');
 
