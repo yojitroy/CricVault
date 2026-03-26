@@ -36,7 +36,7 @@
             <header class="top-header">
                 <div>
                     <h1 id="view-title">Dashboard Overview</h1>
-                    <p class="subtitle" id="view-subtitle">Live Statistics and Management</p>
+                    <p class="subtitle" id="view-subtitle">Championship Data & Insights</p>
                 </div>
                 <div class="header-actions">
                     <div class="profile-avatar">
@@ -128,18 +128,30 @@
 
                 <!-- Teams View -->
                 <div id="view-teams" class="view">
-                    <div class="glass-panel">
-                        <table class="stellar-table" id="table-teams">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Team Name</th>
-                                    <th>Coach</th>
-                                    <th>Home Ground</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
+                    <div id="team-tiles-grid" class="team-tiles-grid"></div>
+
+                    <!-- Team Players Panel (shown on tile click) -->
+                    <div id="team-players-panel" class="team-players-panel glass-panel" style="display:none;">
+                        <div class="team-panel-header">
+                            <div>
+                                <h2 id="team-panel-name"></h2>
+                                <p id="team-panel-meta" class="subtitle"></p>
+                            </div>
+                            <button id="team-panel-close" class="close-btn" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="stellar-table" id="team-players-table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Player Name</th>
+                                        <th>Role</th>
+                                        <th>Price (₹ Cr)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="team-players-tbody"></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -152,7 +164,6 @@
                             <option value="batsman">Batsman</option>
                             <option value="bowler">Bowler</option>
                             <option value="all-rounder">All-Rounder</option>
-                            <option value="wicket-keeper">Wicket-Keeper</option>
                         </select>
                     </div>
                     <div class="glass-panel mt-4">
@@ -161,6 +172,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Player Name</th>
+                                    <th>Age</th>
                                     <th>Role</th>
                                     <th>Team</th>
                                 </tr>
